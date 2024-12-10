@@ -26,3 +26,14 @@ public class Player
         Console.WriteLine($"{Name} gained {points} points. Total score: {Score}");
     }
 }
+
+public interface IPlayer
+{
+    string Name { get; set; }
+    (int X, int Y) Position { get; set; }
+    int Score { get; set; }
+
+    void Move(int deltaX, int deltaY, int boardWidth, int boardHeight);
+    void PerformSpecialAction();
+    void UpdateScore(int points);
+}
